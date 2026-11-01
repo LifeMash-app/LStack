@@ -6,6 +6,8 @@ disable-model-invocation: true
 
 # Technical writing
 
+In Codex, first read [the Codex adapter](../../docs/harness/codex.md) once per task. It replaces the Cursor tool and model instructions below.
+
 Write so a tired engineer understands on the first read. Apply all four layers.
 
 Three rules sit above the layers:

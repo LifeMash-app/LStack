@@ -5,6 +5,8 @@ description: Configure which models pstack uses per role and at what reasoning b
 
 # Setup pstack
 
+In Codex, first read [the Codex adapter](../../docs/harness/codex.md) once per task. It replaces the Cursor tool and model instructions below.
+
 Write `~/.cursor/rules/pstack-models.mdc`, an always-applied rule that sets pstack's model per role.
 
 ## Steps

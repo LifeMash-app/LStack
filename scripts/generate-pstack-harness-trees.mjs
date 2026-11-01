@@ -118,7 +118,7 @@ function has(files, path) {
 function render() {
   // Skills read the adapter, the guide, and the README at runtime, so Claude Code never fetches them.
   const copies = [
-    ...walk(SKILLS),
+    ...walk(SKILLS).filter((path) => !path.endsWith("/agents/openai.yaml")),
     ...walk(join(PSTACK, "agents")),
     ...walk(join(PSTACK, GUIDE)),
     join(PSTACK, ADAPTER),
@@ -130,11 +130,18 @@ function render() {
     "It maps the Cursor names in pstack skills to Claude Code.";
   for (const [skill, { wrap }] of classes) {
     const path = `skills/${skill}/SKILL.md`;
-    const text = files.get(path).bytes.toString("utf8");
+    const text = files.get(path).bytes.toString("utf8")
+      .replace(/^In Codex, first read \[the Codex adapter\].*\n\n/m, "");
+    files.get(path).bytes = Buffer.from(text);
     if (wrap) files.get(path).bytes = Buffer.from(text.replace(/^(# .*)\n+/m, `$1\n\n${line}\n\n`));
   }
   files.set("LICENSE", file(join(PSTACK, "LICENSE")));
-  for (const manifest of MANIFESTS) files.set(manifest, file(join(PSTACK, "plugin.json")));
+  const manifest = JSON.parse(readFileSync(join(PSTACK, "plugin.json"), "utf8"));
+  if (manifest.extensions) {
+    delete manifest.extensions["com.openai"];
+    if (Object.keys(manifest.extensions).length === 0) delete manifest.extensions;
+  }
+  for (const path of MANIFESTS) files.set(path, { bytes: Buffer.from(`${JSON.stringify(manifest, null, 2)}\n`), executable: false });
   for (const [path, entry] of files) {
     if (!path.endsWith(".md")) continue;
     const text = entry.bytes.toString("utf8").replace(LINK, (link, href) => {

@@ -6,6 +6,8 @@ disable-model-invocation: true
 
 # Architect
 
+In Codex, first read [the Codex adapter](../../docs/harness/codex.md) once per task. It replaces the Cursor tool and model instructions below.
+
 Sketch types, function signatures, class shapes, and module boundaries with `not implemented` bodies and pseudocode. Synthesize across multiple model perspectives, then fill in code against the chosen sketch.
 
 ## Start

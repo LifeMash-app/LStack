@@ -6,6 +6,8 @@ disable-model-invocation: true
 
 # Reflect
 
+In Codex, first read [the Codex adapter](../../docs/harness/codex.md) once per task. It replaces the Cursor tool and model instructions below.
+
 Mine the current conversation for durable learnings, then route them into skill edits.
 
 Invoke when the user says "reflect" or "/reflect". Skip when the conversation is trivial, off-topic, or already covered by an existing skill the parent followed correctly. One-offs are not learnings.

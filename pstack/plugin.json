@@ -9,6 +9,17 @@
   "homepage": "https://github.com/cursor/plugins/tree/main/pstack",
   "repository": "https://github.com/cursor/plugins",
   "license": "MIT",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "LStack (LifeMashStack)",
+        "shortDescription": "pstack engineering workflows for Codex",
+        "developerName": "LifeMash, based on Lauren Tan's pstack",
+        "category": "Developer Tools",
+        "defaultPrompt": ["Use $pstack:poteto-mode for this task."]
+      }
+    }
+  },
   "keywords": [
     "pstack",
     "poteto-mode",

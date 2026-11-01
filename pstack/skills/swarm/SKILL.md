@@ -6,6 +6,8 @@ disable-model-invocation: true
 
 # Swarm
 
+In Codex, first read [the Codex adapter](../../docs/harness/codex.md) once per task. It replaces the Cursor tool and model instructions below.
+
 ## Start
 
 Open a todolist with one entry per phase before launching anything.

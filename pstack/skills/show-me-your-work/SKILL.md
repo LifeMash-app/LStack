@@ -6,6 +6,8 @@ disable-model-invocation: true
 
 # Show me your work
 
+In Codex, first read [the Codex adapter](../../docs/harness/codex.md) once per task. It replaces the Cursor tool and model instructions below.
+
 Keep one canonical log.
 
 ## The format

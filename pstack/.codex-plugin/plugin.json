@@ -1,0 +1,17 @@
+{
+  "name": "pstack",
+  "version": "0.15.36",
+  "description": "LifeMashStack. Upstream pstack workflows adapted for Codex.",
+  "author": { "name": "LifeMash" },
+  "homepage": "https://github.com/LifeMash-hq/LStack",
+  "repository": "https://github.com/LifeMash-hq/LStack",
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "LStack (LifeMashStack)",
+    "shortDescription": "pstack engineering workflows for Codex",
+    "developerName": "LifeMash, based on Lauren Tan's pstack",
+    "category": "Developer Tools",
+    "defaultPrompt": ["Use $pstack:poteto-mode for this task."]
+  }
+}

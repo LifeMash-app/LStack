@@ -1,3 +1,5 @@
+> **LStack (LifeMashStack)**의 Codex 설치와 사용 방법은 [LStack 안내](README.lstack.md)에 있습니다. 아래는 포크한 원본 저장소의 설명입니다.
+
 # Cursor plugins
 
 Official Cursor plugins for popular developer tools, frameworks, and SaaS products. Each plugin is a standalone directory at the repository root with its own `.cursor-plugin/plugin.json` manifest.
