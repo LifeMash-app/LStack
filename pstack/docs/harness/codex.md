@@ -51,3 +51,11 @@ In Codex, report the current model/effort when observable and explain the role s
 ```bash
 codex --model gpt-6.1-sol -c 'model_reasoning_effort="medium"'
 ```
+
+## Conversation mode
+
+Trusted local Codex hooks recognize `poteto 모드 켜줘`, `poteto 모드 꺼줘`, and `poteto 모드 상태` on the first line of a prompt. English equivalents are `poteto mode on`, `poteto mode off`, and `poteto mode status`. A task may follow on later lines. A control-only message acknowledges the state without starting a playbook.
+
+The hook keeps an enabled marker per conversation under `PLUGIN_DATA` and provides a short skill reference each turn and after compaction. A resumed conversation keeps its state; a new conversation, fork, or clear starts off. Ordinary `$pstack:poteto-mode <task>` remains a one-turn invocation. Hook context reporting ON is evidence of persistence; without it, do not claim the mode is saved. The mode does not change model settings or permissions.
+
+Plugin hooks require native trust through `/hooks`. Local plugin hooks do not run with cloud orchestration. When unavailable, use explicit per-request invocation and report that persistence is unavailable.

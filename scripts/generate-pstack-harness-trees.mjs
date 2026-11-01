@@ -18,7 +18,7 @@ const GITHUB = "https://github.com/cursor/plugins";
 const LINK = /\]\(([^)\s]+)\)/g;
 const README = `# pstack harness tree
 
-This folder is generated from \`pstack/skills\`, \`pstack/agents\`, \`pstack/${GUIDE}\`, \`pstack/${ADAPTER}\`, \`pstack/README.md\`, \`pstack/LICENSE\`, and \`pstack/plugin.json\`. Do not edit it by hand.
+This folder is generated from \`pstack/skills\`, \`pstack/agents\`, \`pstack/${GUIDE}\`, \`pstack/${ADAPTER}\`, \`pstack/README.md\`, \`pstack/LICENSE\`, and \`pstack/plugin.template.json\`. Do not edit it by hand.
 
 Cursor uses \`pstack/\` directly, and Claude Code installs \`${TREE}/\`. The tree leaves out the rest of \`pstack/\`, such as \`pstack/automations\` and \`pstack/assets\`. A relative link to a pstack file that the tree leaves out points at that file on GitHub \`main\` instead.
 
@@ -137,11 +137,7 @@ function render() {
   }
   files.set("LICENSE", file(join(PSTACK, "LICENSE")));
   files.set("LICENSE-cursor-team-kit", file(join(PSTACK, "LICENSE-cursor-team-kit")));
-  const manifest = JSON.parse(readFileSync(join(PSTACK, "plugin.json"), "utf8"));
-  if (manifest.extensions) {
-    delete manifest.extensions["com.openai"];
-    if (Object.keys(manifest.extensions).length === 0) delete manifest.extensions;
-  }
+  const manifest = JSON.parse(readFileSync(join(PSTACK, "plugin.template.json"), "utf8"));
   for (const path of MANIFESTS) files.set(path, { bytes: Buffer.from(`${JSON.stringify(manifest, null, 2)}\n`), executable: false });
   for (const [path, entry] of files) {
     if (!path.endsWith(".md")) continue;

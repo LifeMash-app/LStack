@@ -42,5 +42,9 @@ if (!existsSync(join(root, "pstack", "docs", "harness", "codex.md"))) throw new 
 const marketplace = JSON.parse(readFileSync(join(root, ".agents", "plugins", "marketplace.json"), "utf8"));
 const manifest = JSON.parse(readFileSync(join(root, "pstack", ".codex-plugin", "plugin.json"), "utf8"));
 if (marketplace.plugins[0].name !== manifest.name || manifest.skills !== "./skills/") throw new Error("Codex plugin registration mismatch");
+if (manifest.hooks) {
+  if (existsSync(join(root, "pstack", "plugin.json"))) throw new Error("Codex 0.166.0 skips Agent Plugins hooks; keep the shared manifest in plugin.template.json");
+  if (!existsSync(join(root, "pstack", manifest.hooks))) throw new Error("Missing Codex hook configuration");
+}
 console.log(`${count} skills ${check ? "checked" : "configured"}; ${errors} errors`);
 process.exitCode = errors ? 1 : 0;
