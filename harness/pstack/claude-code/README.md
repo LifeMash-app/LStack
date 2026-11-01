@@ -158,6 +158,9 @@ to keep [`/poteto-mode`](./skills/poteto-mode/SKILL.md) on across turns, pick it
 | [`/unslop`](./skills/unslop/SKILL.md) | you're cleaning up writing. removes AI tells. |
 | [`/bro`](./skills/bro/SKILL.md) | you want the last message restated in plain human language, no jargon. |
 | [`/technical-writing`](./skills/technical-writing/SKILL.md) | layered doc standard (Diátaxis + Google developer style + STE + Global English) for docs, RFCs, readmes, PR descriptions, commit messages. |
+| [`/deslop`](./skills/deslop/SKILL.md) | 불필요한 주석, 방어 코드, 타입 우회를 검토하고 동작을 유지하며 정리합니다. |
+| [`/control-cli`](./skills/control-cli/SKILL.md) | 기존 테스트 도구나 tmux, PTY로 CLI와 TUI 동작을 재현하고 검증합니다. |
+| [`/control-ui`](./skills/control-ui/SKILL.md) | 기존 브라우저 도구나 Playwright, CDP로 웹과 Electron 화면을 검증합니다. |
 
 </details>
 
@@ -256,15 +259,11 @@ twenty-four short skills, one principle each. `poteto-mode` indexes them inline 
 
 </details>
 
-## not shipped here
+## Dependencies
 
-a few things `poteto-mode` references but doesn't bundle:
+LStack은 `cursor-team-kit`의 `deslop`, `control-cli`, `control-ui`를 함께 배포합니다. 원본의 스킬 본문을 유지하며 [Cursor의 MIT 라이선스](./LICENSE-cursor-team-kit)를 포함합니다.
 
-- `/deslop` and the `deslop` skill ship in the `cursor-team-kit` plugin.
-- `control-cli` (for CLIs and TUIs) and `control-ui` (for browser, Electron, web) ship in `cursor-team-kit` too.
 - `/create-skill` is a cursor built-in. cursor also ships a built-in `/autopilot` that watches a pr. inside `poteto-mode`, pr-status requests go to the [babysit playbook](./skills/poteto-mode/playbooks/babysit.md) instead.
-
-install `cursor-team-kit` alongside pstack if you want the full set.
 
 ## why are there no planning skills?
 

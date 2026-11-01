@@ -42,7 +42,7 @@ For history, use a supported session-history tool scoped to the current project,
 
 For built-in PR actions, use the available forge connector or CLI. Existing Bugbot comments can be read as ordinary PR reviews. Cursor cloud control, automations, and Cursor-specific script commands are unavailable. Skip an optional step with a reason; if required evidence depends on it, report the missing capability rather than claiming completion. A long-running request does not create a background monitor by itself.
 
-External skills such as `deslop`, `control-cli`, `control-ui`, and Cursor's `create-skill` are not bundled. Use an available equivalent (such as `skill-creator`), or perform the requested inspection, writing, or verification directly with native tools. Report a missing capability when it prevents verification.
+`deslop`, `control-cli`, and `control-ui` are bundled in `<pstack>/skills/`. Read those local skills when a playbook references them, including references naming `cursor-team-kit`. They are instructions, not installed runtimes; use available terminal/browser tools or the project's existing harness. Report a missing capability when it prevents verification. Cursor's built-in `create-skill` maps to the available `skill-creator` skill.
 
 ## setup-pstack
 

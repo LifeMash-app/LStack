@@ -1,6 +1,6 @@
 {
   "name": "pstack",
-  "version": "0.15.36",
+  "version": "0.15.36-lstack.1",
   "description": "LifeMashStack. Upstream pstack workflows adapted for Codex.",
   "author": { "name": "LifeMash" },
   "homepage": "https://github.com/LifeMash-hq/LStack",

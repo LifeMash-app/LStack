@@ -24,6 +24,8 @@ Match the check to the change:
 - A perf change compares before and after profiles.
 - A storage change reads back the written value.
 
+LStack은 CLI와 TUI 검증용 [`/control-cli`](../../skills/control-cli/SKILL.md), 웹과 Electron 검증용 [`/control-ui`](../../skills/control-ui/SKILL.md)를 함께 배포합니다. 스킬은 현재 환경의 도구와 기존 테스트 환경을 사용합니다. Playwright나 tmux 자체를 설치하는 것은 아닙니다.
+
 Ask for the proof as an artifact you can inspect yourself: the failing test and then the passing one, a before-and-after video, the trace, the screenshot. If the fix already merged, ask for the same check again on main. An artifact beats a plausible explanation, because you can challenge it without replaying the whole run.
 
 For a small diff you don't fully trust, [`/blast-radius`](../../skills/blast-radius/SKILL.md) finds what it could break elsewhere. It finds the one fact that makes the change safe and proves that fact by running code, not by arguing for it.

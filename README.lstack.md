@@ -54,3 +54,5 @@ codex plugin add pstack@lifemash
 ## 출처
 
 원본은 [cursor/plugins의 pstack](https://github.com/cursor/plugins/tree/main/pstack)입니다. 원본의 MIT 라이선스와 저작권 표기를 유지합니다.
+
+`cursor-team-kit`에서 가져온 `deslop`, `control-cli`, `control-ui`도 함께 배포합니다. [Cursor의 MIT 라이선스](pstack/LICENSE-cursor-team-kit)를 포함하며, 세 스킬의 본문은 원본 그대로 유지합니다.

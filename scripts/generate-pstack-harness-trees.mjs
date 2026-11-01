@@ -136,6 +136,7 @@ function render() {
     if (wrap) files.get(path).bytes = Buffer.from(text.replace(/^(# .*)\n+/m, `$1\n\n${line}\n\n`));
   }
   files.set("LICENSE", file(join(PSTACK, "LICENSE")));
+  files.set("LICENSE-cursor-team-kit", file(join(PSTACK, "LICENSE-cursor-team-kit")));
   const manifest = JSON.parse(readFileSync(join(PSTACK, "plugin.json"), "utf8"));
   if (manifest.extensions) {
     delete manifest.extensions["com.openai"];
