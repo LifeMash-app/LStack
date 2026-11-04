@@ -6,6 +6,7 @@ on:
       - ".cursor-plugin/marketplace.json"
       - ".claude-plugin/marketplace.json"
       - "**/plugin.json"
+      - ".agents/plugins/marketplace.json"
       - "schemas/**"
       - "pstack/**"
       - "harness/**"
@@ -20,7 +21,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: ">=24.22 <25"
 
       - name: Install dependencies
         run: npm install --no-save ajv ajv-formats fast-check@4.5.3
@@ -36,6 +37,9 @@ jobs:
 
       - name: Test LStack conversation mode hooks
         run: python3 -m unittest discover -s pstack/hooks/tests
+
+      - name: Test Codex history and worktree audit
+        run: node --test scripts/test/*.test.mjs
 
       - name: Test pstack skill scripts
         run: node --disable-warning=ExperimentalWarning --test pstack/skills/*/scripts/test/*.test.ts
