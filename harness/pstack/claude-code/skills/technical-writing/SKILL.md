@@ -10,6 +10,8 @@ In Claude Code, read [the Claude Code adapter](../../docs/harness/claude-code.md
 
 Write so a tired engineer understands on the first read. Apply all four layers.
 
+For Korean prose, [the Korean writing rules](../poteto-mode/references/korean-writing.md) take precedence over the English sentence-length, connective, and list-format rules below.
+
 Three rules sit above the layers:
 
 - **Cut every word that does no work.** If the sentence survives without a word, the word goes. "In order to" is "to". "It is important to note that" is nothing.

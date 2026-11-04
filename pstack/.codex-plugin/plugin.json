@@ -1,12 +1,13 @@
 {
   "name": "pstack",
-  "version": "0.15.36-lstack.1",
+  "version": "0.15.36-lstack.3",
   "description": "LifeMashStack. Upstream pstack workflows adapted for Codex.",
   "author": { "name": "LifeMash" },
-  "homepage": "https://github.com/LifeMash-hq/LStack",
-  "repository": "https://github.com/LifeMash-hq/LStack",
+  "homepage": "https://github.com/LifeMash-app/LStack",
+  "repository": "https://github.com/LifeMash-app/LStack",
   "license": "MIT",
   "skills": "./skills/",
+  "hooks": "./hooks/hooks.json",
   "interface": {
     "displayName": "LStack (LifeMashStack)",
     "shortDescription": "pstack engineering workflows for Codex",
