@@ -5,12 +5,12 @@
 # Astra requires an explicit user request under the Codex adapter's limit.
 # budget: small (medium)
 default effort: medium
-feature, refactoring: gpt-6.1-sol@medium
-bug-fix: gpt-6.1-sol@medium
-perf-issue: gpt-6.1-sol@medium
-hillclimb: gpt-6.1-sol@medium
-judgment and prose: gpt-6.1-sol@medium
-arena runners: gpt-6.1-sol@high, gpt-6.1-sol@high
+feature, refactoring: gpt-6.2-sol@medium
+bug-fix: gpt-6.2-sol@medium
+perf-issue: gpt-6.2-sol@medium
+hillclimb: gpt-6.2-sol@medium
+judgment and prose: gpt-6.2-sol@medium
+arena runners: gpt-6.2-sol@high, gpt-6.2-sol@high
 arena cross-judge pool: inherit-parent
-swarm workers: gpt-6.1-sol@medium
-interrogate reviewers: gpt-6.1-sol@high, gpt-6.1-sol@high
+swarm workers: gpt-6.2-sol@medium
+interrogate reviewers: gpt-6.2-sol@high, gpt-6.2-sol@high

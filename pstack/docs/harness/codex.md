@@ -24,9 +24,9 @@ For a model-selecting skill, read `pstack-models.md` under `CODEX_HOME` (default
 
 | Role | Model | Reasoning effort |
 | --- | --- | --- |
-| Ordinary exploration, implementation, synthesis, prose | `gpt-6.1-sol` | `medium` |
-| Architecture, independent review, difficult debugging | `gpt-6.1-sol` | `high` |
-| One specific judgment explicitly requested from Astra | `gpt-6-astra` | `low` |
+| Ordinary exploration, implementation, synthesis, prose | `gpt-6.2-sol` | `medium` |
+| Architecture, independent review, difficult debugging | `gpt-6.2-sol` | `high` |
+| One specific judgment explicitly requested from Astra | `gpt-6.2-astra` | `low` |
 
 Astra is never an automatic fallback, panel member, or cross-judge. An authorized Astra consultation receives only the question and necessary code/evidence, defaults to one call, and does not delegate or retry automatically. Sol handles follow-up implementation.
 
