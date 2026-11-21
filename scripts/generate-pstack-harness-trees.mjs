@@ -20,7 +20,7 @@ const README = `# pstack harness tree
 
 This folder is generated from \`pstack/skills\`, \`pstack/agents\`, \`pstack/${GUIDE}\`, \`pstack/${ADAPTER}\`, \`pstack/README.md\`, \`pstack/LICENSE\`, and \`pstack/plugin.template.json\`. Do not edit it by hand.
 
-Cursor uses \`pstack/\` directly, and Claude Code installs \`${TREE}/\`. The tree leaves out the rest of \`pstack/\`, such as \`pstack/automations\` and \`pstack/assets\`. A relative link to a pstack file that the tree leaves out points at that file on GitHub \`main\` instead.
+Cursor uses \`pstack/\` directly, and Claude Code installs \`${TREE}/\`. The tree leaves out the rest of \`pstack/\`, such as \`pstack/automations\` and \`pstack/assets\`. A relative link to a pstack file that the tree leaves out points at its source on GitHub instead.
 
 After editing those sources, run \`${COMMAND}\` from the repository root and commit the result.
 `;
@@ -145,7 +145,8 @@ function render() {
       const target = resolve(path, href);
       if (!target || target.split("/")[0] === ".." || has(files, target)) return link;
       const kind = statSync(join(PSTACK, target)).isDirectory() ? "tree" : "blob";
-      return `](${GITHUB}/${kind}/main/pstack/${target}${href.slice(href.search(/[#?]|$/))})`;
+      const repository = target === "docs/harness/codex.md" ? "https://github.com/LifeMash-app/LStack" : GITHUB;
+      return `](${repository}/${kind}/main/pstack/${target}${href.slice(href.search(/[#?]|$/))})`;
     });
     entry.bytes = Buffer.from(text);
   }
