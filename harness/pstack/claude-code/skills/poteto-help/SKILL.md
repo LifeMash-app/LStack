@@ -45,9 +45,9 @@ Installing changes nothing until the user invokes a skill. Only `/setup-pstack` 
 
 If cost is the worry, say where the tokens go and how to spend fewer. pstack spends extra tokens on subagents and review panels. Rerun `/setup-pstack` and pick a smaller budget or cheaper models. A role set to `auto` or `inherit-parent` runs on the chat's model, which saves tokens when the chat runs on Auto or a cheaper model. A shorter panel list runs fewer subagents, one for each entry. Save `/poteto-mode` for work that needs rigor.
 
-pstack supports Cursor, Claude Code, and Codex. In Claude Code, each command takes a `pstack:` prefix, such as `/pstack:poteto-mode`. The [Claude Code adapter](../../docs/harness/claude-code.md) maps the Cursor names.
+PStack supports Cursor and Claude Code. The LStack fork packages PStack for Codex. In Claude Code, each command takes a `pstack:` prefix, such as `/pstack:poteto-mode`. The [Claude Code adapter](../../docs/harness/claude-code.md) maps the Cursor names.
 
-In Codex, select the installed pstack skill or use `$pstack:name`, such as `$pstack:poteto-mode`. Read the [Codex adapter](https://github.com/LifeMash-app/LStack/blob/main/pstack/docs/harness/codex.md) for tools, model choices, and history. Use the skill for one request, or say `poteto 모드 켜줘` to keep LStack routing on for this conversation. Say `poteto 모드 꺼줘` to turn it off. Cursor Custom Modes and `/loop` do not apply in Codex.
+In Codex, select the installed pstack skill or use `$pstack:name`, such as `$pstack:poteto-mode`. Read the [Codex adapter](https://github.com/LifeMash-app/LStack/blob/main/pstack/docs/harness/codex.md) for tools and model choices. Use the skill for one request, or say `poteto 모드 켜줘` to keep LStack routing on for this conversation. Say `poteto 모드 꺼줘` to turn it off. Cursor Custom Modes and `/loop` do not apply in Codex.
 
 For a step that needs a Cursor-only feature, follow the host adapter's skip rule and report the missing check. Other tools can read the Agent Skills files, but need their own mappings for tools and subagents.
 
